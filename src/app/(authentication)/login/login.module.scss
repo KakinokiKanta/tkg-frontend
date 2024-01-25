@@ -4,7 +4,9 @@
   padding: 0.5em 1em;
   margin: 2em 0;
   color: #474747;
+  font-weight: bold;
+  font-size: 20px;
   background: #fff; /*背景色*/
-  border-top: double 7px var.$charcoal; /*左線*/
-  border-bottom: double 7px var.$charcoal; /*右線*/
+  border-top: double 7px var(--charcoal); /*左線*/
+  border-bottom: double 7px var(--charcoal); /*右線*/
 }
