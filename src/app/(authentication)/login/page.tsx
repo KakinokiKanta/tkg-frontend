@@ -1,3 +1,4 @@
+import { Form } from "@/components/Form";
 import styles from "./login.module.scss";
 
 const Login = () => {
@@ -5,9 +6,8 @@ const Login = () => {
     <main>
       <section>
         <div className={styles.container}>
-          <p>ID</p>
-          <p>Password</p>
-          <button>Login</button>
+          <h3>ログイン</h3>
+          <Form />
         </div>
       </section>
     </main>

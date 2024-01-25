@@ -9,4 +9,13 @@
   background: #fff; /*背景色*/
   border-top: double 7px var(--charcoal); /*左線*/
   border-bottom: double 7px var(--charcoal); /*右線*/
+
+  h3 {
+    text-align: center;
+  }
+
+  button {
+    display: block;
+    margin: 0 auto;
+  }
 }
