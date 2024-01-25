@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "@/app/globals.css";
+import "@/app/globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "GitHubの草を使って育てるマイキャラ育成アプリ!たまごっちをオマージュしてます",
 };
 
-export default function RootLayout({
+export default function AuthenticationLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
