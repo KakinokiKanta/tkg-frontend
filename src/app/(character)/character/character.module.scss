@@ -1,18 +1,18 @@
 .window {
   height: 100vh;
   width: 100%;
-  background: url("/character-back-normal.jpg") center/cover;
+  background: url("/character_back/character-back-normal.jpg") center/cover;
   overflow: hidden;
 }
 
 @media (width <= 768px) {
   .window {
-    background: url("/character-back-slim.jpg") center/cover;
+    background: url("/character_back/character-back-slim.jpg") center/cover;
   }
 }
 
 @media (1100px <= width) {
   .window {
-    background: url("/character-back-wide.jpg") center/cover;
+    background: url("/character_back/character-back-wide.jpg") center/cover;
   }
 }
