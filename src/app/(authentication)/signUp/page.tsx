@@ -1,4 +1,4 @@
-import { Form } from "./Form";
+import { Form } from "./_components/Form";
 import styles from "./signUp.module.scss";
 
 const SignUp = () => {

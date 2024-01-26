@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./character.module.scss";
 
 const Character = () => {

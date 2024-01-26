@@ -1,5 +1,5 @@
-import { Form } from "./Form";
-import { Register } from "./Register";
+import { Form } from "./_components/Form";
+import { Register } from "./_components/Register";
 import styles from "./login.module.scss";
 
 const Login = () => {
