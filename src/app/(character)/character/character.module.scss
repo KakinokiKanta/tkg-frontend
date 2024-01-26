@@ -5,6 +5,25 @@
   overflow: hidden;
 }
 
+.frame {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  padding: 0.5em 1em;
+  color: var(--font-color);
+  font-weight: bold;
+  background: #fff; /*背景色*/
+  border-top: double 7px var(--decorate-color); /*左線*/
+  border-bottom: double 7px var(--decorate-color); /*右線*/
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+}
+
 @media (width <= 768px) {
   .window {
     background: url("/character_back/character-back-slim.jpg") center/cover;
