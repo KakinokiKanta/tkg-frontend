@@ -1,14 +1,19 @@
 :root {
   /* カラー定義 */
-  --back-color: #e9dccd;
   --petal: #e3bab3;
   --bargundy: #613a43;
-  --fresh: #849974;
-  --charcoal: #36384c;
+  --back-color: #e9dccd;
+  --decorate-color: #849974;
+  --font-color: #36384c;
+  --login-color: #32cbdf;
+  --register-color: #ff9b3d;
 
   /* 数値定義 */
-  --section-max_width: 800px;
+  --section-max-width: 600px;
   --section-width: 90%;
+  --font-size: 20px;
+  --font-size-button: 16px;
+  --button-min-width: 100px;
 }
 
 * {
@@ -26,7 +31,7 @@ body {
 
 section {
   margin: 0 auto;
-  max-width: var(--section-max_width);
+  max-width: var(--section-max-width);
   width: var(--section-width);
 }
 

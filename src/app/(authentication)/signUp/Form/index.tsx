@@ -22,7 +22,7 @@ export const Form = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.content}>
         <label htmlFor="id" className={styles.label}>
-          ID
+          メールアドレス
         </label>
         <input id="id" {...register("id")} className={styles.input} />
       </div>
@@ -37,8 +37,19 @@ export const Form = () => {
           className={styles.input}
         />
       </div>
+      <div className={styles.content}>
+        <label htmlFor="passwordCheck" className={styles.label}>
+          パスワード確認
+        </label>
+        <input
+          id="passwordCheck"
+          {...register("password")}
+          type="password"
+          className={styles.input}
+        />
+      </div>
       <button type="submit" className={styles.loginButton}>
-        ログイン
+        新規登録
       </button>
     </form>
   );
