@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./character.module.scss";
+import { CharacterImg } from "./_components/CharacterImg";
 
 const Character = () => {
   // キャラ移動の方向を決める関数
@@ -18,6 +19,7 @@ const Character = () => {
       <div className={styles.frame}>
         <h1 className={styles.title}>TKG World!!</h1>
       </div>
+      <CharacterImg />
     </div>
   );
 };
