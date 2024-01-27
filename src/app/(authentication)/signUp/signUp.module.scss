@@ -1,0 +1,20 @@
+.container {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: var(--section-width);
+  max-width: var(--section-max-width);
+  margin: auto;
+  padding: 1.5em 1em;
+  color: var(--font-color);
+  font-weight: bold;
+  font-size: var(--font-size);
+  background: #fff; /*背景色*/
+  border-top: double 7px var(--decorate-color);
+  border-bottom: double 7px var(--decorate-color);
+
+  h3 {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+}

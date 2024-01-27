@@ -1,0 +1,41 @@
+:root {
+  /* カラー定義 */
+  --petal: #e3bab3;
+  --bargundy: #613a43;
+  --back-color: #e9dccd;
+  --decorate-color: #849974;
+  --font-color: #36384c;
+  --login-color: #32cbdf;
+  --register-color: #ff9b3d;
+
+  /* 数値定義 */
+  --section-max-width: 600px;
+  --section-width: 90%;
+  --font-size: 20px;
+  --font-size-button: 16px;
+  --button-min-width: 100px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--back-color);
+}
+
+section {
+  margin: 0 auto;
+  max-width: var(--section-max-width);
+  width: var(--section-width);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
