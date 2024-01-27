@@ -7,9 +7,9 @@ export const CharacterImg = () => {
   return (
     <div>
       <Image
-        src={"/character/dragon1_pix.png"}
-        width={250}
-        height={300}
+        src={"/character/pokobe-pix.png"}
+        width={300}
+        height={250}
         alt="キャラクター画像"
         className={styles.img}
       />

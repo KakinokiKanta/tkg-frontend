@@ -1,7 +1,7 @@
 .window {
   height: 100vh;
   width: 100%;
-  background: url("/character_back/character-back-normal.jpg") center/cover;
+  background: url("/character_back/character-back-pix.png") center/cover;
   overflow: hidden;
 }
 
@@ -25,14 +25,14 @@
   text-align: center;
 }
 
-@media (width <= 768px) {
-  .window {
-    background: url("/character_back/character-back-slim.jpg") center/cover;
-  }
-}
+// @media (width <= 768px) {
+//   .window {
+//     background: url("/character_back/character-back-slim.png") center/cover;
+//   }
+// }
 
-@media (1100px <= width) {
-  .window {
-    background: url("/character_back/character-back-wide.jpg") center/cover;
-  }
-}
+// @media (1100px <= width) {
+//   .window {
+//     background: url("/character_back/character-back-wide.png") center/cover;
+//   }
+// }
