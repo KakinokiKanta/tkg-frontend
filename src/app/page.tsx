@@ -16,9 +16,9 @@ const Character = () => {
 
   return (
     <div className={styles.window}>
-      <div className={styles.frame}>
+      {/* <div className={styles.frame}>
         <h1 className={styles.title}>TKG World!!</h1>
-      </div>
+      </div> */}
       <CharacterImg />
     </div>
   );
