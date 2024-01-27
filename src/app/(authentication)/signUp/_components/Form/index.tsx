@@ -1,6 +1,7 @@
 "use client";
 
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useRouter } from "next/navigation";
 import styles from "./Form.module.scss";
 
 type Inputs = {
@@ -16,7 +17,12 @@ export const Form = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const router = useRouter();
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(data);
+    router.push("/login");
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
