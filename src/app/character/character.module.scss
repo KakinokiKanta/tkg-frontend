@@ -1,0 +1,38 @@
+.window {
+  height: 100vh;
+  width: 100%;
+  background: url("/character_back/character-back-pix.png") center/cover;
+  overflow: hidden;
+}
+
+.frame {
+  position: fixed;
+  z-index: 10px;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  padding: 0.5em 1em;
+  color: var(--font-color);
+  font-weight: bold;
+  background: #fff;
+  border-top: double 7px var(--decorate-color);
+  border-bottom: double 7px var(--decorate-color);
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+}
+
+// @media (width <= 768px) {
+//   .window {
+//     background: url("/character_back/character-back-slim.png") center/cover;
+//   }
+// }
+
+// @media (1100px <= width) {
+//   .window {
+//     background: url("/character_back/character-back-wide.png") center/cover;
+//   }
+// }
