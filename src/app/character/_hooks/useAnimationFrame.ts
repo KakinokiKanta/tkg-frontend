@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./CharacterImg.module.scss";
 
-export const CharacterImg = () => {
+export const useAnimationFrame = () => {
   const [position, setPosition] = useState({ x: 50, y: 50 });
   const X_MAX = 5;
   const Y_MAX = 5;
@@ -18,29 +18,14 @@ export const CharacterImg = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setPosition((position) => {
-        return {
-          x: position.x + getRandomDirection().x,
-          y: position.y + getRandomDirection().y,
-        };
+      setPosition({
+        x: position.x + getRandomDirection().x,
+        y: position.y + getRandomDirection().y,
       });
     }, 1000);
 
-    // return () => clearInterval(interval);
+    return () => clearInterval(interval);
   }, []);
 
-  return (
-    <div
-      className={styles.move}
-      style={{ top: `${position.x}%`, left: `${position.y}%` }}
-    >
-      <Image
-        src={"/character/pokobe-pix.png"}
-        width={200}
-        height={160}
-        alt="キャラクター画像"
-        className={styles.img}
-      />
-    </div>
-  );
+  return { ...position };
 };
