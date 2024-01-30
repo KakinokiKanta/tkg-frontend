@@ -25,7 +25,6 @@ export const CharacterImg = () => {
         };
       });
     }, 1000);
-
     // return () => clearInterval(interval);
   }, []);
 
