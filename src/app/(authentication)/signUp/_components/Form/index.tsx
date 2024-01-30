@@ -6,6 +6,7 @@ import styles from "./Form.module.scss";
 
 type Inputs = {
   id: number;
+  mail: string;
   password: string;
 };
 
@@ -27,8 +28,14 @@ export const Form = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.content}>
-        <label htmlFor="id" className={styles.label}>
+        <label htmlFor="mail" className={styles.label}>
           メールアドレス
+        </label>
+        <input id="mail" {...register("mail")} className={styles.input} />
+      </div>
+      <div className={styles.content}>
+        <label htmlFor="id" className={styles.label}>
+          GitHub ID
         </label>
         <input id="id" {...register("id")} className={styles.input} />
       </div>
@@ -55,7 +62,7 @@ export const Form = () => {
         />
       </div>
       <button type="submit" className={styles.loginButton}>
-        新規登録
+        登録
       </button>
     </form>
   );
