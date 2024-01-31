@@ -2,15 +2,15 @@
 
 import Image from "next/image";
 import styles from "./CharacterImg.module.scss";
-import { useAnimationRestless } from "../../_hooks/useAnimationRestless";
+import { useAnimationSlowly } from "../../_hooks/useAnimationSlowly";
 
 export const CharacterImg = () => {
-  const position = useAnimationRestless();
+  const position = useAnimationSlowly();
 
   return (
     <div
       className={styles.move}
-      style={{ top: `${position.x}%`, left: `${position.y}%` }}
+      style={{ top: `${position.y}%`, left: `${position.x}%` }}
     >
       <Image
         src={"/character/heart_creature.png"}
