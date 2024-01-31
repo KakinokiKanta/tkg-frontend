@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import styles from "./CharacterImg.module.scss";
-import { useAnimationSlowly } from "../../_hooks/useAnimationSlowly";
+import { useAnimationStraight } from "../../_hooks/useAnimationStraight";
+import { useAnimationRestless } from "../../_hooks/useAnimationRestless";
 
 export const CharacterImg = () => {
-  const position = useAnimationSlowly();
+  // const position = useAnimationStraight();
+  const position = useAnimationRestless();
 
   return (
     <div

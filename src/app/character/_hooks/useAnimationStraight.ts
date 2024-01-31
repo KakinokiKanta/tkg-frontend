@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 
-export const useAnimationSlowly = () => {
-  const X_PADDING = 10; // キャラの移動域のx軸余白
-  const Y_PADDING = 10; // キャラの移動域のy軸余白
+export const useAnimationStraight = () => {
+  const X_PADDING = 15; // キャラの移動域のx軸余白
+  const Y_PADDING = 15; // キャラの移動域のy軸余白
   const MIN_DURATION = 1000; // キャラの最短静止時間 [msec]
   const MAX_DURATION = 3000; // キャラの最長静止時間 [msec]
   const MAX_SPEED = 0.1; // キャラの最高速度
-  const MIN_SPEED = 0.01; // キャラの最低速度
+  const MIN_SPEED = 0.05; // キャラの最低速度
   const [position, setPosition] = useState({ x: 50, y: 50 }); // キャラの初期位置
 
   // キャラ移動の方向を決める関数
