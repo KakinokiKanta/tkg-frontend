@@ -3,13 +3,15 @@
 import { useEffect, useState } from "react";
 
 export const useAnimationStraight = () => {
-  const X_PADDING = 15; // キャラの移動域のx軸余白
-  const Y_PADDING = 15; // キャラの移動域のy軸余白
+  const LEFT_PADDING = 15; // キャラの移動域の左余白
+  const RIGHT_PADDING = 85; // キャラの移動域の右余白
+  const TOP_PADDING = 60; // キャラの移動域の上余白
+  const BOTTOM_PADDING = 85; // キャラの移動域の下余白
   const MIN_DURATION = 1000; // キャラの最短静止時間 [msec]
   const MAX_DURATION = 3000; // キャラの最長静止時間 [msec]
   const MAX_SPEED = 0.1; // キャラの最高速度
   const MIN_SPEED = 0.05; // キャラの最低速度
-  const [position, setPosition] = useState({ x: 50, y: 50 }); // キャラの初期位置
+  const [position, setPosition] = useState({ x: 50, y: 70 }); // キャラの初期位置
 
   // キャラ移動の方向を決める関数
   const getRandomDirection = () => {
@@ -45,10 +47,10 @@ export const useAnimationStraight = () => {
         y: position.y + direction.y * speed,
       };
       if (
-        newPosition.x < X_PADDING ||
-        newPosition.x > 100 - X_PADDING ||
-        newPosition.y < Y_PADDING ||
-        newPosition.y > 100 - Y_PADDING
+        newPosition.x < LEFT_PADDING ||
+        newPosition.x > RIGHT_PADDING ||
+        newPosition.y < TOP_PADDING ||
+        newPosition.y > BOTTOM_PADDING
       ) {
         setIsChangingDirection(true);
       } else {

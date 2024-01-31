@@ -6,8 +6,8 @@ import { useAnimationStraight } from "../../_hooks/useAnimationStraight";
 import { useAnimationRestless } from "../../_hooks/useAnimationRestless";
 
 export const CharacterImg = () => {
-  // const position = useAnimationStraight();
-  const position = useAnimationRestless();
+  const position = useAnimationStraight();
+  // const position = useAnimationRestless();
 
   return (
     <div
@@ -15,7 +15,7 @@ export const CharacterImg = () => {
       style={{ top: `${position.y}%`, left: `${position.x}%` }}
     >
       <Image
-        src={"/character/heart_creature.png"}
+        src={"/character/pokobe-pix.png"}
         width={200}
         height={160}
         alt="キャラクター画像"
