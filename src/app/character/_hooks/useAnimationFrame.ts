@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import styles from "./CharacterImg.module.scss";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export const useAnimationFrame = () => {
+  const requestIdRef = useRef<number>(0);
   const [position, setPosition] = useState({ x: 50, y: 50 });
   const X_MAX = 1;
   const Y_MAX = 1;
@@ -16,26 +15,31 @@ export const useAnimationFrame = () => {
     return { x: xDirection, y: yDirection };
   };
 
-  const updatePosition = () => {
+  const updatePosition = useCallback(() => {
     setPosition((position) => {
+      const move = getRandomDirection();
+      const nextX =
+        position.x + move.x < 10 || 90 < position.x + move.x
+          ? position.x
+          : position.x + move.x;
+      const nextY =
+        position.y + move.y < 10 || 90 < position.y + move.y
+          ? position.y
+          : position.y + move.y;
+
       return {
-        x: position.x + getRandomDirection().x,
-        y: position.y + getRandomDirection().y,
+        x: nextX,
+        y: nextY,
       };
     });
-    requestAnimationFrame(updatePosition);
-  };
+    requestIdRef.current = requestAnimationFrame(updatePosition);
+  }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setPosition({
-        x: position.x + getRandomDirection().x,
-        y: position.y + getRandomDirection().y,
-      });
-    }, 1000);
+    updatePosition();
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => cancelAnimationFrame(requestIdRef.current);
+  }, [updatePosition]);
 
   return { ...position };
 };
