@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import styles from "./CharacterImg.module.scss";
 import { useAnimationRestless } from "../../_hooks/useAnimationRestless";
 
