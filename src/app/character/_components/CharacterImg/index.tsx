@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./CharacterImg.module.scss";
-import { useAnimationFrame } from "../../_hooks/useAnimationFrame";
+import { useAnimationRestless } from "../../_hooks/useAnimationRestless";
 
 export const CharacterImg = () => {
-  const position = useAnimationFrame();
+  const position = useAnimationRestless();
 
   return (
     <div

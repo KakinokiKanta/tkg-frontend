@@ -2,11 +2,11 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export const useAnimationFrame = () => {
+export const useAnimationRestless = () => {
   const requestIdRef = useRef<number>(0);
   const [position, setPosition] = useState({ x: 50, y: 50 });
-  const X_MAX = 1;
-  const Y_MAX = 1;
+  const X_MAX = 3;
+  const Y_MAX = 3;
 
   // キャラ移動の方向を決める関数
   const getRandomDirection = () => {
