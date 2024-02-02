@@ -11,6 +11,7 @@ export const useAnimationStraight = () => {
   const MAX_DURATION = 3000; // キャラの最長静止時間 [msec]
   const MAX_SPEED = 0.1; // キャラの最高速度
   const MIN_SPEED = 0.05; // キャラの最低速度
+  // const STOP_PROBABILITY = 0.0001; // キャラが止まる確率
   const [position, setPosition] = useState({ x: 50, y: 70 }); // キャラの初期位置
 
   // キャラ移動の方向を決める関数
@@ -46,12 +47,22 @@ export const useAnimationStraight = () => {
         x: position.x + direction.x * speed,
         y: position.y + direction.y * speed,
       };
+
+      // 移動を実行するかを判定
+      let stopable: boolean;
       if (
         newPosition.x < LEFT_PADDING ||
         newPosition.x > RIGHT_PADDING ||
         newPosition.y < TOP_PADDING ||
         newPosition.y > BOTTOM_PADDING
       ) {
+        stopable = true;
+      } else {
+        // stopable = Math.random() < STOP_PROBABILITY ? true : false;
+        stopable = false;
+      }
+
+      if (stopable) {
         setIsChangingDirection(true);
       } else {
         setPosition(newPosition);
