@@ -19,11 +19,11 @@ export const useAnimationRestless = () => {
     setPosition((position) => {
       const move = getRandomDirection();
       const nextX =
-        position.x + move.x < 10 || 90 < position.x + move.x
+        position.x + move.x < 15 || 85 < position.x + move.x
           ? position.x
           : position.x + move.x;
       const nextY =
-        position.y + move.y < 10 || 90 < position.y + move.y
+        position.y + move.y < 15 || 40 < position.y + move.y
           ? position.y
           : position.y + move.y;
 
