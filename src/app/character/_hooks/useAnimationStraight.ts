@@ -49,23 +49,23 @@ export const useAnimationStraight = () => {
       };
 
       // 移動を実行するかを判定
-      let stopable: boolean;
+      let movable: boolean;
       if (
-        newPosition.x < LEFT_PADDING ||
-        newPosition.x > RIGHT_PADDING ||
-        newPosition.y < TOP_PADDING ||
-        newPosition.y > BOTTOM_PADDING
+        newPosition.x > LEFT_PADDING &&
+        newPosition.x < RIGHT_PADDING &&
+        newPosition.y > TOP_PADDING &&
+        newPosition.y < BOTTOM_PADDING
       ) {
-        stopable = true;
+        movable = true;
       } else {
-        // stopable = Math.random() < STOP_PROBABILITY ? true : false;
-        stopable = false;
+        // movable = Math.random() < STOP_PROBABILITY ? true : false;
+        movable = false;
       }
 
-      if (stopable) {
-        setIsChangingDirection(true);
-      } else {
+      if (movable) {
         setPosition(newPosition);
+      } else {
+        setIsChangingDirection(true);
       }
     };
     const animationFrame = requestAnimationFrame(updatePosition);
