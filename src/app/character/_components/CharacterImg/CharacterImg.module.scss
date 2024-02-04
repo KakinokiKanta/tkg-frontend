@@ -6,6 +6,21 @@
   transition: all 0.5s 0 linear;
 }
 
+.sway {
+  transform-origin: center;
+  animation: swayAnimation 2s linear infinite;
+}
+
 .img {
   position: relative;
+}
+
+@keyframes swayAnimation {
+  0%,
+  100% {
+    transform: rotate(10deg) translateX(-50%) translateY(-50%);
+  }
+  50% {
+    transform: rotate(-10deg) translateX(-50%) translateY(-50%);
+  }
 }

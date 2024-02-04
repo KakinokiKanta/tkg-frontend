@@ -24,9 +24,16 @@ export const useAnimationStraight = () => {
     return Math.random() * (MAX_SPEED + MIN_SPEED) + MIN_SPEED;
   };
 
+  // キャラが揺れるかを決める関数
+  const getSwayble = () => {
+    return Math.random() < 0.5 ? true : false;
+  };
+
   const [direction, setDirection] = useState(getRandomDirection()); //キャラ移動の方向を表す
   const [speed, setSpeed] = useState(getRandomSpeed()); //キャラ移動の速度を表す
   const [isChangingDirection, setIsChangingDirection] = useState(false); // キャラ移動の方向転換を表す
+  const [swayble, setSwayble] = useState(getSwayble); // キャラが揺れるかを表す
+  const [swaybleDuration, setSwaybleDuration] = useState(0);
 
   // キャラ移動を処理する関数
   useEffect(() => {
@@ -35,10 +42,12 @@ export const useAnimationStraight = () => {
       if (isChangingDirection) {
         const stopDuration =
           Math.random() * (MAX_DURATION - MIN_DURATION) + MIN_DURATION;
+        setSwaybleDuration(stopDuration);
         setTimeout(() => {
           setDirection(getRandomDirection());
           setSpeed(getRandomSpeed());
           setIsChangingDirection(false);
+          setSwayble(getSwayble);
         }, stopDuration);
       }
 
@@ -66,11 +75,14 @@ export const useAnimationStraight = () => {
         setPosition(newPosition);
       } else {
         setIsChangingDirection(true);
+        setTimeout(() => {
+          setSwayble(getSwayble);
+        }, swaybleDuration);
       }
     };
     const animationFrame = requestAnimationFrame(updatePosition);
     return () => cancelAnimationFrame(animationFrame);
   }, [position, direction, speed, isChangingDirection]);
 
-  return { ...position };
+  return { position, swayble };
 };
