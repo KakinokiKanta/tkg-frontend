@@ -28,7 +28,7 @@ export const Form = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.content}>
         <label htmlFor="id" className={styles.label}>
-          ID
+          メールアドレス
         </label>
         <input id="id" {...register("id")} className={styles.input} />
       </div>
