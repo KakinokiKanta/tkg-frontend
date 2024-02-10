@@ -38,6 +38,11 @@ export const Form = () => {
           {...register("id", {
             required: {
               value: true,
+              message: "メールは必須でござるよ!!",
+            },
+            pattern: {
+              value:
+                /^[A-Za-z0-9_.+-]+@([A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9]*\.)+[A-Za-z]{2,}$/,
               message: "メール形式と違うでござるよ!!",
             },
           })}
