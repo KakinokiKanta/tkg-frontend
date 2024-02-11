@@ -54,7 +54,16 @@ export const Form = () => {
         <label htmlFor="id" className={styles.label}>
           GitHub ID
         </label>
-        <input id="id" {...register("id")} className={styles.input} />
+        <input
+          id="id"
+          {...register("id", {
+            required: {
+              value: true,
+              message: "GitHub IDは必須でござるよ!!",
+            },
+          })}
+          className={styles.input}
+        />
       </div>
       <div className={styles.content}>
         <label htmlFor="password" className={styles.label}>
@@ -62,7 +71,16 @@ export const Form = () => {
         </label>
         <input
           id="password"
-          {...register("password")}
+          {...register("password", {
+            required: {
+              value: true,
+              message: "パスワードの登録は必須でござるよ!!",
+            },
+            pattern: {
+              value: /^[A-Za-z0-9]+$/,
+              message: "パスワードは英数字のみでござるよ!!",
+            },
+          })}
           type="password"
           className={styles.input}
         />
@@ -73,7 +91,17 @@ export const Form = () => {
         </label>
         <input
           id="passwordCheck"
-          {...register("password")}
+          {...register("password", {
+            required: {
+              value: true,
+              message: "パスワードの確認は必須でござるよ!!",
+            },
+            pattern: {
+              value:
+                /^[A-Za-z0-9_.+-]+@([A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9]*\.)+[A-Za-z]{2,}$/,
+              message: "メール形式と違うでござるよ!!",
+            },
+          })}
           type="password"
           className={styles.input}
         />
