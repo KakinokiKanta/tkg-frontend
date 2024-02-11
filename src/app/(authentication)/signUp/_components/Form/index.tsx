@@ -22,6 +22,8 @@ export const Form = () => {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
+    // TODO: バッグエンドにdataを送信
+    reset(); // フォームに入力した値をリセット
     router.push("/login");
   };
 
@@ -31,7 +33,22 @@ export const Form = () => {
         <label htmlFor="mail" className={styles.label}>
           メールアドレス
         </label>
-        <input id="mail" {...register("mail")} className={styles.input} />
+        <input
+          id="mail"
+          {...register("mail", {
+            required: {
+              value: true,
+              message: "メールは必須でござるよ!!",
+            },
+            pattern: {
+              value:
+                /^[A-Za-z0-9_.+-]+@([A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9]*\.)+[A-Za-z]{2,}$/,
+              message: "メール形式と違うでござるよ!!",
+            },
+          })}
+          className={styles.input}
+        />
+        <p className={styles.validation}>{errors.mail?.message}</p>
       </div>
       <div className={styles.content}>
         <label htmlFor="id" className={styles.label}>
