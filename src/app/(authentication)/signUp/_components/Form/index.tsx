@@ -42,7 +42,7 @@ export const Form = () => {
             },
             pattern: {
               value:
-                /^[A-Za-z0-9_.+-]+@([A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9]*\.)+[A-Za-z]{2,}$/,
+                /^[A-Za-z0-9_.+-]+(.[a-zA-Z0-9_+-]+)*@([A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9]*\.)+[A-Za-z]{2,}$/,
               message: "メール形式と違うでござるよ!!",
             },
           })}
@@ -98,7 +98,7 @@ export const Form = () => {
             },
             pattern: {
               value:
-                /^[A-Za-z0-9_.+-]+@([A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9]*\.)+[A-Za-z]{2,}$/,
+                /^[A-Za-z0-9_.+-]+(.[a-zA-Z0-9_+-]+)*@([A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9]*\.)+[A-Za-z]{2,}$/,
               message: "メール形式と違うでござるよ!!",
             },
           })}
