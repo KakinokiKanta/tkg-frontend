@@ -65,6 +65,10 @@ export const Form = () => {
               value: /^[A-Za-z0-9.?/-]+$/,
               message: "パスワードは英数字のみでござるよ!!",
             },
+            minLength: {
+              value: 8,
+              message: "パスワードは8文字以上で入力するでござるよ!!",
+            },
           })}
           type="password"
           className={styles.input}
