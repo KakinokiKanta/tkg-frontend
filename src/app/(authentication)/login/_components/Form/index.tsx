@@ -61,6 +61,10 @@ export const Form = () => {
               value: true,
               message: "パスワードは必須でござるよ!!",
             },
+            pattern: {
+              value: /^[A-Za-z0-9.?/-]+$/,
+              message: "パスワードは英数字のみでござるよ!!",
+            },
           })}
           type="password"
           className={styles.input}

@@ -5,9 +5,10 @@ import { useRouter } from "next/navigation";
 import styles from "./Form.module.scss";
 
 type Inputs = {
-  id: number;
   mail: string;
+  github: string;
   password: string;
+  passwordCheck: string;
 };
 
 export const Form = () => {
@@ -16,6 +17,7 @@ export const Form = () => {
     handleSubmit,
     reset,
     watch,
+    getValues,
     formState: { errors },
   } = useForm<Inputs>();
 
@@ -52,12 +54,12 @@ export const Form = () => {
         <p className={styles.validation}>{errors.mail?.message}</p>
       </div>
       <div className={styles.content}>
-        <label htmlFor="id" className={styles.label}>
+        <label htmlFor="github" className={styles.label}>
           GitHub ID
         </label>
         <input
-          id="id"
-          {...register("id", {
+          id="github"
+          {...register("github", {
             required: {
               value: true,
               message: "GitHub IDは必須でござるよ!!",
@@ -65,6 +67,7 @@ export const Form = () => {
           })}
           className={styles.input}
         />
+        <p className={styles.validation}>{errors.github?.message}</p>
       </div>
       <div className={styles.content}>
         <label htmlFor="password" className={styles.label}>
@@ -78,13 +81,18 @@ export const Form = () => {
               message: "パスワードの登録は必須でござるよ!!",
             },
             pattern: {
-              value: /^[A-Za-z0-9]+$/,
+              value: /^[A-Za-z0-9.?/-]+$/,
               message: "パスワードは英数字のみでござるよ!!",
+            },
+            minLength: {
+              value: 8,
+              message: "パスワードは8文字以上で入力するでござるよ!!",
             },
           })}
           type="password"
           className={styles.input}
         />
+        <p className={styles.validation}>{errors.password?.message}</p>
       </div>
       <div className={styles.content}>
         <label htmlFor="passwordCheck" className={styles.label}>
@@ -92,20 +100,21 @@ export const Form = () => {
         </label>
         <input
           id="passwordCheck"
-          {...register("password", {
+          {...register("passwordCheck", {
             required: {
               value: true,
               message: "パスワードの確認は必須でござるよ!!",
             },
-            pattern: {
-              value:
-                /^[A-Za-z0-9_.+-]+(.[a-zA-Z0-9_+-]+)*@([A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9]*\.)+[A-Za-z]{2,}$/,
-              message: "メール形式と違うでござるよ!!",
+            validate: {
+              message: (value) =>
+                value === getValues("password") ||
+                "パスワードと違うでござるよ!!",
             },
           })}
           type="password"
           className={styles.input}
         />
+        <p className={styles.validation}>{errors.passwordCheck?.message}</p>
       </div>
       <button type="submit" className={styles.loginButton}>
         登録
