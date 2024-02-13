@@ -4,12 +4,15 @@
 // }
 
 .registerButton {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50%;
   min-width: var(--button-min-width);
   margin: 40px auto;
   margin-top: 40px;
   padding: 8px 0;
+  gap: 8px;
   background-color: var(--github-color);
   color: #fff;
   font-weight: bold;
