@@ -1,12 +1,13 @@
-.registerContainer {
-  border-top: 1px solid var(--decorate-color);
-}
+// .registerContainer {
+//   border-top: 1px solid var(--decorate-color);
+//   margin-bottom: 15px;
+// }
 
 .registerButton {
   display: block;
   width: 50%;
   min-width: var(--button-min-width);
-  margin: 0 auto;
+  margin: 40px auto;
   margin-top: 40px;
   padding: 8px 0;
   background-color: var(--github-color);
