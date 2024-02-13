@@ -18,3 +18,15 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+@media (width < 768px) {
+  .registerButton {
+    width: 280px;
+  }
+}
+
+@media (width < 425px) {
+  .registerButton {
+    width: 90%;
+  }
+}

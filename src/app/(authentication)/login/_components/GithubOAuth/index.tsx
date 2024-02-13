@@ -14,7 +14,7 @@ export const GithubOAuth = () => {
   return (
     <div className={styles.registerContainer}>
       <button onClick={handleClick} className={styles.registerButton}>
-        GitHubアカウントで登録
+        GitHubアカウントでログイン
       </button>
     </div>
   );
