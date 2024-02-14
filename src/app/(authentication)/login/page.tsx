@@ -1,5 +1,5 @@
-import { Form } from "./_components/Form";
-import { Register } from "./_components/Register";
+// import { Form } from "./_components/Form";
+// import { Register } from "./_components/Register";
 import { GithubOAuth } from "./_components/GithubOAuth";
 import styles from "./login.module.scss";
 
