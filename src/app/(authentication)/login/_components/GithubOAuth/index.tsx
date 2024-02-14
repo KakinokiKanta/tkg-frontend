@@ -12,11 +12,6 @@ export const GithubOAuth = () => {
     //TODO: Githubで認証
     console.log("githubでログイン");
     const result = await signIn("github");
-
-    // if (result?.error) {
-    //   alert("ログイン失敗");
-    // } else {
-    // }
   };
 
   return (
