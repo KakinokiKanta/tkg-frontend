@@ -7,7 +7,7 @@ import Image from "next/image";
 export const GithubOAuth = () => {
   const router = useRouter();
 
-  const handleClick = () => {
+  const handleClick = async () => {
     //TODO: Githubで認証
     console.log("githubでログイン");
   };

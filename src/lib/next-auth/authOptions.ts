@@ -1,46 +1,28 @@
-import CredentialsProvider from "next-auth/providers/credentials";
+// import CredentialsProvider from "next-auth/providers/credentials";
+import { NextAuthOptions } from "next-auth";
+import GithubProvider from "next-auth/providers/github";
 import { randomUUID, randomBytes } from "crypto";
 
-export const authOptions = {
+export const authOptions: NextAuthOptions = {
   /* providers */
   providers: [
     // ユーザ用認証
-    CredentialsProvider({
-      id: "user",
-      name: "User",
-      credentials: {
-        email: {
-          label: "メールアドレス",
-          type: "email",
-          placeholder: "メールアドレス",
-        },
-        password: { label: "パスワード", type: "password" },
-      },
-      async authorize(credentials) {
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auth/user`,
-          {
-            method: "POST",
-            body: JSON.stringify(credentials),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-
-        const user = res.json();
-
-        if (res.ok && user) {
-          return user;
-        }
-
-        return null;
-      },
+    GithubProvider({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
 
   /* callbacks */
-  callbacks: {},
+  callbacks: {
+    async redirect({ baseUrl }) {
+      return baseUrl;
+    },
+    async session({ session, user }) {
+      if (session?.user) session.user.id = user.id;
+      return session;
+    },
+  },
 
   /* secret */
   secret: process.env.NEXTAUTH_SECRET,
@@ -54,8 +36,12 @@ export const authOptions = {
   session: {
     maxAge: 30 * 24 * 60 * 60, // 30 days
     updateAge: 24 * 60 * 60, // 24 hours
-    generateSessionToken: () => {
-      return randomUUID?.() ?? randomBytes(32).toString("hex");
-    },
+  },
+
+  /* secure */
+  useSecureCookies: process.env.NODE_ENV === "production",
+
+  pages: {
+    signIn: "/src/app/(authentication)/login",
   },
 };
