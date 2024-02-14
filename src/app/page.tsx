@@ -1,8 +1,19 @@
 import Image from "next/image";
-import styles from "./page.module.scss";
 import Link from "next/link";
+import { authOptions } from "@/lib/next-auth/authOptions";
+import { getServerSession } from "next-auth";
+import styles from "./page.module.scss";
+import { redirect } from "next/navigation";
+// import { useRouter } from "next/router";
 
-const Top = () => {
+const Top = async () => {
+  const session = await getServerSession(authOptions);
+  // const router = useRouter();
+  // console.log(session);
+  if (!session) {
+    // router.push("/login");
+    redirect("/login");
+  }
   return (
     <div className={styles.window}>
       <div className={styles.titleFrame}>
