@@ -14,15 +14,15 @@ export const authOptions: NextAuthOptions = {
   ],
 
   /* callbacks */
-  callbacks: {
-    async redirect({ baseUrl }) {
-      return baseUrl;
-    },
-    async session({ session, user }) {
-      if (session?.user) session.user.id = user.id;
-      return session;
-    },
-  },
+  // callbacks: {
+  //   async redirect({ baseUrl }) {
+  //     return baseUrl;
+  //   },
+  //   async session({ session, user }) {
+  //     if (session?.user) session.user.id = user.id;
+  //     return session;
+  //   },
+  // },
 
   /* secret */
   secret: process.env.NEXTAUTH_SECRET,
@@ -39,7 +39,7 @@ export const authOptions: NextAuthOptions = {
   },
 
   /* secure */
-  useSecureCookies: process.env.NODE_ENV === "production",
+  // useSecureCookies: process.env.NODE_ENV === "production",
 
   pages: {
     signIn: "/login",
