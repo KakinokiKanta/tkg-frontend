@@ -1,7 +1,7 @@
 // import CredentialsProvider from "next-auth/providers/credentials";
 import { NextAuthOptions } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
-import { randomUUID, randomBytes } from "crypto";
+// import { randomUUID, randomBytes } from "crypto";
 
 export const authOptions: NextAuthOptions = {
   /* providers */
@@ -42,6 +42,6 @@ export const authOptions: NextAuthOptions = {
   useSecureCookies: process.env.NODE_ENV === "production",
 
   pages: {
-    signIn: "/src/app/(authentication)/login",
+    signIn: "/login",
   },
 };

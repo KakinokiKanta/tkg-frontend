@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import styles from "./GithubOAuth.module.scss";
 import Image from "next/image";
+import { signIn } from "next-auth/react";
 
 export const GithubOAuth = () => {
   const router = useRouter();
@@ -10,6 +11,12 @@ export const GithubOAuth = () => {
   const handleClick = async () => {
     //TODO: Githubで認証
     console.log("githubでログイン");
+    const result = await signIn("github");
+
+    // if (result?.error) {
+    //   alert("ログイン失敗");
+    // } else {
+    // }
   };
 
   return (
