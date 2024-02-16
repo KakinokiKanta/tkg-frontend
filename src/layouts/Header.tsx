@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./Header.module.scss";
 import Link from "next/link";
+import { LogoutButton } from "./LogoutButton";
 
 export const Header = () => {
   return (
@@ -20,9 +21,7 @@ export const Header = () => {
         <nav className={styles.nav}>
           <ul className={styles.ul}>
             <li className={styles.li}>
-              <Link href={"/login"} className={styles.link}>
-                ログアウト
-              </Link>
+              <LogoutButton />
               <Link href={"/signUp"} className={styles.link}>
                 ヘルプ
               </Link>

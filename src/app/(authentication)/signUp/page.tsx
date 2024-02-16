@@ -1,4 +1,5 @@
 import { Form } from "./_components/Form";
+import { GithubOAuth } from "../login/_components/GithubOAuth";
 import styles from "./signUp.module.scss";
 
 const SignUp = () => {

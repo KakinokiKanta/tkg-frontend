@@ -1,0 +1,25 @@
+.link {
+  position: relative;
+  display: inline-block;
+  margin: 0.5rem 0.5rem;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--decorate-color);
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}

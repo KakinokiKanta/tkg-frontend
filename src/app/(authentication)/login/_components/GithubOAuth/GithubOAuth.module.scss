@@ -1,0 +1,35 @@
+// .registerContainer {
+//   border-top: 1px solid var(--decorate-color);
+//   margin-bottom: 15px;
+// }
+
+.registerButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  min-width: var(--button-min-width);
+  margin: 40px auto;
+  margin-top: 40px;
+  padding: 8px 0;
+  gap: 8px;
+  background-color: var(--github-color);
+  color: #fff;
+  font-weight: bold;
+  font-size: var(--font-size-button);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (width < 768px) {
+  .registerButton {
+    width: 280px;
+  }
+}
+
+@media (width < 425px) {
+  .registerButton {
+    width: 90%;
+  }
+}
