@@ -7,7 +7,7 @@ import NextAuthProvider from "@/components/providers/NextAuth";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "tkg",
+  title: "tkg(仮)",
   description:
     "GitHubの草を使って育てるマイキャラ育成アプリ!たまごっちをオマージュしてます",
 };
