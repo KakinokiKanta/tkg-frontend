@@ -4,7 +4,7 @@ import GithubProvider from "next-auth/providers/github";
 // import { randomUUID, randomBytes } from "crypto";
 
 export const authOptions: NextAuthOptions = {
-  // debug: true,
+  debug: true,
   /* providers */
   providers: [
     // ユーザ用認証
@@ -70,7 +70,7 @@ export const authOptions: NextAuthOptions = {
   /* secure */
   // useSecureCookies: process.env.NODE_ENV === "production",
 
-  pages: {
-    signIn: "/login",
-  },
+  // pages: {
+  //   signIn: "/login",
+  // },
 };
