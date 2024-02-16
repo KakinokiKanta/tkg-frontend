@@ -4,7 +4,7 @@ import GithubProvider from "next-auth/providers/github";
 // import { randomUUID, randomBytes } from "crypto";
 
 export const authOptions: NextAuthOptions = {
-  debug: true,
+  // debug: true,
   /* providers */
   providers: [
     // ユーザ用認証
@@ -26,9 +26,6 @@ export const authOptions: NextAuthOptions = {
   // },
   callbacks: {
     jwt: async ({ token, user, account, profile, isNewUser }) => {
-      // 注意: トークンをログ出力してはダメです。
-      console.log("in jwt", { user, token, account, profile });
-
       if (user) {
         token.user = user;
         const u = user as any;
@@ -40,7 +37,6 @@ export const authOptions: NextAuthOptions = {
       return token;
     },
     session: ({ session, token }) => {
-      console.log("in session", { session, token });
       token.accessToken;
       return {
         ...session,

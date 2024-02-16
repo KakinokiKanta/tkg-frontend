@@ -10,7 +10,7 @@ const Top = async () => {
   const session = await getServerSession(authOptions);
   const user = session?.user;
   // const router = useRouter();
-  console.log(session);
+  // console.log(session);
   // if (!session) {
   //   // router.push("/login");
   //   redirect("/login");
