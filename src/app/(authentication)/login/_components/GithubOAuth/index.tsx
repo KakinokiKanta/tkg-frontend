@@ -9,7 +9,7 @@ export const GithubOAuth = () => {
   const router = useRouter();
 
   const handleClick = async () => {
-    //TODO: Githubで認証
+    // Githubで認証
     // console.log("githubでログイン");
     const result = await signIn("github");
   };
