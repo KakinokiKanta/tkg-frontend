@@ -9,7 +9,7 @@ import { redirect } from "next/navigation";
 const Top = async () => {
   const session = await getServerSession(authOptions);
   // const router = useRouter();
-  // console.log(session);
+  console.log(session);
   if (!session) {
     // router.push("/login");
     redirect("/login");
