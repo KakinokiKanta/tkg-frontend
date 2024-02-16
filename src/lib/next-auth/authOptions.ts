@@ -40,7 +40,7 @@ export const authOptions: NextAuthOptions = {
       return token;
     },
     session: async ({ session, token }) => {
-      token.accessToken;
+      session.user.accessToken = token.accessToken;
       return {
         ...session,
         user: {

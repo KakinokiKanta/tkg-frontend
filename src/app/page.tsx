@@ -8,7 +8,6 @@ import { redirect } from "next/navigation";
 const Top = async () => {
   const session = await getServerSession(authOptions);
   const user = session?.user;
-  console.log(user?.accessToken);
   if (user) {
     return (
       <div className={styles.window}>
