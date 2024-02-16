@@ -11,6 +11,9 @@ export const authOptions: NextAuthOptions = {
     GithubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
+      authorization: {
+        params: { scope: "user" },
+      },
     }),
   ],
 
@@ -36,7 +39,7 @@ export const authOptions: NextAuthOptions = {
       }
       return token;
     },
-    session: ({ session, token }) => {
+    session: async ({ session, token }) => {
       token.accessToken;
       return {
         ...session,
@@ -67,7 +70,7 @@ export const authOptions: NextAuthOptions = {
   },
 
   /* secure */
-  // useSecureCookies: process.env.NODE_ENV === "production",
+  useSecureCookies: process.env.NODE_ENV === "production",
 
   pages: {
     signIn: "/login",
