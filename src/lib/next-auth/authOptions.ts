@@ -17,27 +17,27 @@ export const authOptions: NextAuthOptions = {
 
   /* callbacks */
   callbacks: {
-    // jwt: async ({ token, user, account, profile, isNewUser }) => {
-    //   if (user) {
-    //     token.user = user;
-    //     const u = user as any;
-    //     token.role = u.role;
-    //   }
-    //   if (account) {
-    //     token.accessToken = account.access_token;
-    //   }
-    //   return token;
-    // },
-    // session: async ({ session, token }) => {
-    //   session.user.accessToken = token.accessToken;
-    //   return {
-    //     ...session,
-    //     user: {
-    //       ...session.user,
-    //       role: token.role,
-    //     },
-    //   };
-    // },
+    jwt: async ({ token, user, account }) => {
+      if (user) {
+        token.user = user;
+        const u = user as any;
+        token.role = u.role;
+      }
+      if (account) {
+        token.accessToken = account.access_token;
+      }
+      return token;
+    },
+    session: async ({ session, token }) => {
+      session.user.accessToken = token.accessToken;
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          role: token.role,
+        },
+      };
+    },
     async redirect({ baseUrl }) {
       return baseUrl;
     },
