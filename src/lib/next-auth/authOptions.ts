@@ -1,7 +1,5 @@
-// import CredentialsProvider from "next-auth/providers/credentials";
 import { NextAuthOptions } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
-// import { randomUUID, randomBytes } from "crypto";
 
 export const authOptions: NextAuthOptions = {
   // debug: true,
@@ -18,15 +16,6 @@ export const authOptions: NextAuthOptions = {
   ],
 
   /* callbacks */
-  // callbacks: {
-  //   async redirect({ baseUrl }) {
-  //     return baseUrl;
-  //   },
-  //   async session({ session, user }) {
-  //     if (session?.user) session.user.id = user.id;
-  //     return session;
-  //   },
-  // },
   callbacks: {
     jwt: async ({ token, user, account, profile, isNewUser }) => {
       if (user) {
