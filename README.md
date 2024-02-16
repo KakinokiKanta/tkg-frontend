@@ -23,6 +23,9 @@ npm run dev
 
 最初は`src/app/page.tsx`ページにアクセスしますが、ログインしていない場合、`src/app/(authentication)/login/page.tsx`にリダイレクトします。
 
+> [!WARNING]
+> GitHubのユーザ設定において、Developer settingsのtkgにおけるHomepage URLとAuthorization callback URLの値は本番環境用になっているが、View deploymentで確認する際には変更しなければならない... (どうにかしないととは考えています...)
+
 ## Deploy on Vercel
 
 このWebアプリは、 [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
