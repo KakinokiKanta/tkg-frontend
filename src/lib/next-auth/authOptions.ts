@@ -39,6 +39,7 @@ export const authOptions: NextAuthOptions = {
       };
     },
     async redirect({ baseUrl }) {
+      // return process.env.NEXT_PUBULIC_VERCEL_URL;
       return baseUrl;
     },
   },
