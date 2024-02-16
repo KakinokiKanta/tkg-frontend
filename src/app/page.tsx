@@ -4,17 +4,11 @@ import { authOptions } from "@/lib/next-auth/authOptions";
 import { getServerSession } from "next-auth";
 import styles from "./page.module.scss";
 import { redirect } from "next/navigation";
-// import { useRouter } from "next/router";
 
 const Top = async () => {
   const session = await getServerSession(authOptions);
   const user = session?.user;
-  // const router = useRouter();
-  // console.log(session);
-  // if (!session) {
-  //   // router.push("/login");
-  //   redirect("/login");
-  // }
+  console.log(user?.accessToken);
   if (user) {
     return (
       <div className={styles.window}>

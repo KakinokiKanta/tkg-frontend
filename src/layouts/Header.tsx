@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./Header.module.scss";
 import Link from "next/link";
-// import { signOut } from "next-auth/react";
+import { LogoutButton } from "./LogoutButton";
 
 export const Header = () => {
   return (
@@ -21,13 +21,7 @@ export const Header = () => {
         <nav className={styles.nav}>
           <ul className={styles.ul}>
             <li className={styles.li}>
-              <Link
-                href={"/login"}
-                className={styles.link}
-                // onClick={() => signOut()}
-              >
-                ログアウト
-              </Link>
+              <LogoutButton />
               <Link href={"/signUp"} className={styles.link}>
                 ヘルプ
               </Link>
