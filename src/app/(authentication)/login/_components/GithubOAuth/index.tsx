@@ -10,7 +10,6 @@ export const GithubOAuth = () => {
 
   const handleClick = async () => {
     // Githubで認証
-    // console.log("githubでログイン");
     const result = await signIn("github");
     // const result = await signIn("github", {
     //   callbackUrl: "https://github.com/login/oauth/authorize",
