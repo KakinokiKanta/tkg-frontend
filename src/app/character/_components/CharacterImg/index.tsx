@@ -16,7 +16,7 @@ export const CharacterImg = () => {
       style={{ top: `${position.y}%`, left: `${position.x}%` }}
     >
       <Image
-        src={"/character/pokobe-pix.png"}
+        src={"/character/kazama/pokobe-pix.png"}
         width={200}
         height={160}
         alt="キャラクター画像"
