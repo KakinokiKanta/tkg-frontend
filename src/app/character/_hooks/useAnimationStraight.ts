@@ -13,6 +13,9 @@ export const useAnimationStraight = () => {
   const MIN_SPEED = 0.05; // キャラの最低速度
   // const STOP_PROBABILITY = 0.0001; // キャラが止まる確率
   const [position, setPosition] = useState({ x: 50, y: 70 }); // キャラの初期位置
+  const [characterImage, setCharacterImage] = useState(
+    "/character/kazama/pokobe-pix.png"
+  ); // キャラの画像
 
   // キャラ移動の方向を決める関数
   const getRandomDirection = () => {
@@ -84,5 +87,16 @@ export const useAnimationStraight = () => {
     return () => cancelAnimationFrame(animationFrame);
   }, [position, direction, speed, isChangingDirection]);
 
+  // TODO: 動作時のキャラ画像にする関数 (未実装)
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (Math.random() < 1) {
+  //       setCharacterImage("/character/kazama/pokobe-pix.png");
+  //     }
+  //   }, 1000);
+  //   return () => clearInterval(interval);
+  // }, [characterImage]);
+
+  // return { characterImage, position, swayble };
   return { position, swayble };
 };

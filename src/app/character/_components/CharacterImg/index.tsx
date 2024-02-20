@@ -6,6 +6,7 @@ import { useAnimationStraight } from "../../_hooks/useAnimationStraight";
 // import { useAnimationRestless } from "../../_hooks/useAnimationRestless";
 
 export const CharacterImg = () => {
+  // const { characterImage, position, swayble } = useAnimationStraight();
   const { position, swayble } = useAnimationStraight();
   // const position = useAnimationRestless();
 
@@ -16,6 +17,7 @@ export const CharacterImg = () => {
       style={{ top: `${position.y}%`, left: `${position.x}%` }}
     >
       <Image
+        // src={characterImage}
         src={"/character/kazama/pokobe-pix.png"}
         width={200}
         height={160}
