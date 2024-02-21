@@ -4,7 +4,10 @@
     "images": {
       "first": ["imagePass", "motionImagePass"],
       "second": ["imagePass", "motionImagePass"],
-      "third": ["imagePass", "motionImagePass"]
+      "third": [
+        "/character/kazama/pokobe-pix.png",
+        "/character/kazama/pokobe-move.png"
+      ]
     },
     "isDeveloped": true
   },
