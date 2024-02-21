@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export const useAnimationStraight = () => {
+export const useAnimationStraight = (props: string[]) => {
   const LEFT_PADDING = 15; // キャラの移動域の左余白
   const RIGHT_PADDING = 85; // キャラの移動域の右余白
   const TOP_PADDING = 60; // キャラの移動域の上余白
@@ -13,9 +13,9 @@ export const useAnimationStraight = () => {
   const MIN_SPEED = 0.05; // キャラの最低速度
   // const STOP_PROBABILITY = 0.0001; // キャラが止まる確率
   const [position, setPosition] = useState({ x: 50, y: 70 }); // キャラの初期位置
-  const [characterImage, setCharacterImage] = useState(
-    "/character/kazama/pokobe-pix.png"
-  ); // キャラの画像
+  // const [characterImage, setCharacterImage] = useState(props[0]); // キャラの画像
+  const [characterImageIndex, setCharacterImageIndex] = useState(0); // キャラの画像
+  const [rareFlag, setRareFlag] = useState(false); // レア画像かどうか
 
   // キャラ移動の方向を決める関数
   const getRandomDirection = () => {
@@ -88,15 +88,18 @@ export const useAnimationStraight = () => {
   }, [position, direction, speed, isChangingDirection]);
 
   // TODO: 動作時のキャラ画像にする関数 (未実装)
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (Math.random() < 1) {
-  //       setCharacterImage("/character/kazama/pokobe-pix.png");
-  //     }
-  //   }, 1000);
-  //   return () => clearInterval(interval);
-  // }, [characterImage]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (Math.random() < 0.5) {
+        setCharacterImageIndex((prevIndex) => (prevIndex + 1) % 2);
+        setRareFlag(false);
+      } else {
+        setRareFlag(true);
+      }
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
 
-  // return { characterImage, position, swayble };
-  return { position, swayble };
+  return { characterImageIndex, position, swayble, rareFlag };
+  // return { position, swayble };
 };
