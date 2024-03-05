@@ -90,7 +90,7 @@ export const useAnimationStraight = (props: string[]) => {
   // TODO: 動作時のキャラ画像にする関数 (未実装)
   useEffect(() => {
     const interval = setInterval(() => {
-      if (Math.random() < 0.5) {
+      if (Math.random() < 0.9) {
         setCharacterImageIndex((prevIndex) => (prevIndex + 1) % 2);
         setRareFlag(false);
       } else {
