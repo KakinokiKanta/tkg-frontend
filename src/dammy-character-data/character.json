@@ -1,0 +1,32 @@
+[
+  {
+    "name": "風間いろは",
+    "images": {
+      "first": ["imagePass", "motionImagePass"],
+      "second": ["imagePass", "motionImagePass"],
+      "third": [
+        "/character/kazama/pokobe-pix.png",
+        "/character/kazama/pokobe-move.png"
+      ]
+    },
+    "isDeveloped": true
+  },
+  {
+    "name": "百鬼あやめ",
+    "images": {
+      "first": ["imagePass", "motionImagePass"],
+      "second": ["imagePass", "motionImagePass"],
+      "third": ["imagePass", "motionImagePass"]
+    },
+    "isDeveloped": false
+  },
+  {
+    "name": "湊あくあ",
+    "images": {
+      "first": ["imagePass", "motionImagePass"],
+      "second": ["imagePass", "motionImagePass"],
+      "third": ["imagePass", "motionImagePass"]
+    },
+    "isDeveloped": false
+  }
+]
